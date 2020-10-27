@@ -1,0 +1,52 @@
+
+{% extends "layouts/base.html" %}
+
+{% block title %} Tables {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+  <div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Small Table</h4>
+          <p class="card-description"> Add class <code>.table-hover</code> </p>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Product ID</th>
+                <th>Product Code</th>
+                <th>Product Description</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for product in products %}
+              <tr>
+                <td>{{product.id}}</td>
+                <td>{{product.product_code}}</td>
+                <td>{{product.product_description}}</td>
+                <td>
+                  <a href="{% url 'product' product.id %}">
+                    <button type="button" 
+                            class="btn btn-outline-primary btn-rounded btn-fw">
+                            Product Information
+                    </button>
+                  </a>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}{% endblock javascripts %}
