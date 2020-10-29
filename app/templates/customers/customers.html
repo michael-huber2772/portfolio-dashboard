@@ -1,4 +1,3 @@
-
 {% extends "layouts/base.html" %}
 
 {% block title %} Tables {% endblock title %}
@@ -8,36 +7,38 @@
 
 {% block content %}
 
-  <div class="row">
-    <div class="col-lg-12 grid-margin stretch-card">
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">Customer Table</h4>
-          <p class="card-description"> Add class <code>.table-hover</code> </p>
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th>Customer ID</th>
-                <th>Customer Name</th>
-                <th></th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for customer in customers %}
-              <tr>
-                <td>{{customer.id}}</td>
-                <td>{{customer.customer_name}}</td>
-                <td><button type="button" class="btn btn-outline-primary btn-rounded btn-fw">Products</button></td>
-                <td><button type="button" class="btn btn-outline-secondary btn-rounded btn-fw">Profile</button></td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-        </div>
+<div class="row">
+  <div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Customer Table</h4>
+        <p class="card-description"> Add class <code>.table-hover</code> </p>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Customer ID</th>
+              <th>Customer Name</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for customer in customers %}
+            <tr>
+              <td>{{customer.id}}</td>
+              <td>{{customer.customer_name}}</td>
+              <td>
+                <a href="{% url 'customer' customer.id %}">
+                  <button type="button" class="btn btn-outline-primary btn-rounded btn-fw">Products</button>
+                </a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
+</div>
 
 {% endblock content %}
 

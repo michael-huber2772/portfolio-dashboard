@@ -11,9 +11,8 @@
 <div class="col-12 grid-margin">
     <div class="card">
         <div class="card-body">
-            <h3>Product Code: {{product.product_code}}</h3>
-            <h4>Product ID: {{product.id}}</h4>
-            <p class="card-description"> Description: {{product.product_description}} </p>
+            <h3>Customer: {{customer.customer_name}}</h3>
+            <h4>Customer ID: {{customer.id}}</h4>
         </div>
     </div>
 </div>
@@ -26,26 +25,22 @@
                     <thead>
                         <tr>
                             <th>Product ID</th>
-                            <th>Price</th>
-                            <th>Minimum Order Quantity</th>
-                            <th>Start Date</th>
-                            <th>End Date</th>
-                            <th>Current Flag</th>
-                            <th>Version</th>
-                            <th>Price ID</th> 
+                            <th>Product Code</th>
+                            <th>Product Description</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                        {% for price in prices %}
+                        {% for product in products %}
                         <tr>
-                            <td>{{price.product_id}}</td>
-                            <td>{{price.price}}</td>
-                            <td>{{price.min_order_quantity}}</td>
-                            <td>{{price.start_date}}</td>
-                            <td>{{price.end_date}}</td>
-                            <td>{{price.current_flag}}</td>
-                            <td>{{price.version}}</td>
-                            <td>{{price.id}}</td>
+                            <td>{{product.id}}</td>
+                            <td>{{product.product_code}}</td>
+                            <td>{{product.product_description}}</td>
+                            <td> <a href="{% url 'product' product.id %}">
+                                    <button type="button" class="btn btn-outline-primary btn-rounded btn-fw">
+                                        Product Information
+                                    </button>
+                                </a></td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -54,7 +49,6 @@
         </div>
     </div>
 </div>
-
 {% endblock content %}
 
 <!-- Specific JS goes HERE -->

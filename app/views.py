@@ -52,6 +52,14 @@ def customers(request):
     return render(request, 'customers/customers.html', context)
 
 @login_required(login_url="/login/")
+def customer(request, pk):
+    customer = get_object_or_404(Customer, pk=pk)
+    products = Product.objects.filter(customer=pk)
+
+    context = {'customer': customer, 'products': products}
+    return render(request, 'customers/customer.html', context)
+
+@login_required(login_url="/login/")
 def products(request):
     products = Product.objects.all()
 
@@ -61,6 +69,7 @@ def products(request):
 @login_required(login_url="/login/")
 def product(request, pk):
     product = get_object_or_404(Product, pk=pk)
+    prices = ProductPrice.objects.filter(product_id=pk)
 
-    context = {'product': product}
+    context = {'product': product, 'prices': prices}
     return render(request, 'products/product.html', context)
