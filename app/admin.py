@@ -10,5 +10,6 @@ from .models import *
 
 
 admin.site.register(Customer)
+admin.site.register(Machine)
 admin.site.register(Product)
 admin.site.register(ProductPrice)

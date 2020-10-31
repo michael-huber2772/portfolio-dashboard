@@ -15,10 +15,16 @@ class Customer(models.Model):
     def __str__(self):
         return self.customer_name
 
+class Machine(models.Model):
+    weight = models.IntegerField()
+    min_profit_per_hour = models.DecimalField(max_digits=10, decimal_places=5)
+
+
 class Product(models.Model):
     product_code = models.CharField(max_length=250)
     product_description = models.TextField()
     customer = models.ManyToManyField(Customer)
+    machine = models.ManyToManyField(Machine)
 
     def __str__(self):
         return self.product_code

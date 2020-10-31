@@ -13,8 +13,12 @@ from .models import *
 
 @login_required(login_url="/login/")
 def index(request):
-    
-    context = {}
+    total_customers = Customer.objects.all().count()
+    total_products = Product.objects.all().count()
+
+
+    context = {'total_customers': total_customers, 
+               'total_products': total_products}
     context['segment'] = 'index'
 
     html_template = loader.get_template( 'index.html' )
@@ -22,6 +26,7 @@ def index(request):
 
 @login_required(login_url="/login/")
 def pages(request):
+    
     context = {}
     # All resource paths end in .html.
     # Pick out the html file name from the url. And load that template.
@@ -73,3 +78,10 @@ def product(request, pk):
 
     context = {'product': product, 'prices': prices}
     return render(request, 'products/product.html', context)
+
+@login_required(login_url="/login/")
+def machines(request):
+    machines = Machine.objects.all()
+
+    context = {'machines': machines}
+    return render(request, 'machines/machines.html', context)

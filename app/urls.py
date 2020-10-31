@@ -17,6 +17,8 @@ urlpatterns = [
     path('products/', views.products, name='products'),
     path('products/<int:pk>/', views.product, name='product'),
 
+    path('machines/', views.machines, name='machines'),
+
     # Matches any html file
     re_path(r'^.*\.*', views.pages, name='pages'),
 

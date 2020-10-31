@@ -7,25 +7,25 @@
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
-
     <div class="row page-title-header">
       <div class="col-12">
         <div class="page-header">
           <h4 class="page-title">Dashboard</h4>
           <div class="quick-link-wrapper w-100 d-md-flex flex-md-wrap">
-            <!-- <ul class="quick-links">
+            <ul class="quick-links">
               <li><a href="#">ICE Market data</a></li>
               <li><a href="#">Own analysis</a></li>
               <li><a href="#">Historic market data</a></li>
-            </ul> -->
-            <!-- <ul class="quick-links ml-auto">
+            </ul>
+            <ul class="quick-links ml-auto">
               <li><a href="#">Settings</a></li>
               <li><a href="#">Analytics</a></li>
               <li><a href="#">Watchlist</a></li>
-            </ul> -->
+            </ul>
           </div>
         </div>
       </div>
+
       <div class="col-md-12">
         <div class="page-header-toolbar">
           <div class="btn-group toolbar-item" role="group" aria-label="Basic example">
@@ -59,6 +59,10 @@
       </div>
     </div>
 
+    {% include 'customers/status.html'  %}
+
+    <br>
+
     <div class="row">
       <div class="col-md-12 grid-margin">
         <div class="card">
@@ -86,7 +90,8 @@
     </div>
 
 
-    <div class="row">
+
+    <!-- <div class="row">
       <div class="col-md-4 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
@@ -205,7 +210,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
 {% endblock content %}
 
