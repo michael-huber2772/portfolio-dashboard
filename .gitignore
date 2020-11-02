@@ -91,3 +91,6 @@ venv.bak/
 # Python Anywhere Directories
 *.deb
 .local/*
+
+
+data/
