@@ -72,12 +72,12 @@ def products(request):
     return render(request, 'products/products.html', context)
 
 @login_required(login_url="/login/")
-def product(request, pk):
+def product_price(request, pk):
     product = get_object_or_404(Product, pk=pk)
     prices = ProductPrice.objects.filter(product_id=pk)
 
     context = {'product': product, 'prices': prices}
-    return render(request, 'products/product.html', context)
+    return render(request, 'products/product_price.html', context)
 
 @login_required(login_url="/login/")
 def machines(request):
