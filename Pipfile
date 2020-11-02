@@ -15,8 +15,10 @@ dj-database-url = "*"
 python-decouple = "*"
 gunicorn = "*"
 whitenoise = "*"
-Django = "==2.2.10"
 Unipath = "*"
+python-dotenv = "*"
+psycopg2 = "*"
+django = "*"
 
 [requires]
 python_version = "3.8"
