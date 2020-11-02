@@ -92,5 +92,8 @@ venv.bak/
 *.deb
 .local/*
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> feat1/customer
 data/

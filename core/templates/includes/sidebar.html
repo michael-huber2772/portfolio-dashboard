@@ -4,14 +4,13 @@
             <li class="nav-item nav-profile">
               <a href="#" class="nav-link">
                 <div class="profile-image">
-                  <img class="img-xs rounded-circle" src="/static/assets/images/faces/face8.jpg" alt="profile image">
-                  <div class="dot-indicator bg-success"></div>
+                  <img class="img-xs rounded-circle" src="/static/assets/images/faces/profile.jpg" alt="profile image">
                 </div>
                 <div class="text-wrapper">
                   <p class="profile-name">
                     {{ request.user.user }}
                   </p>
-                  <p class="designation">Premium user</p>
+                  <p class="designation">Employee</p>
                 </div>
               </a>
             </li>
@@ -23,9 +22,27 @@
               </a>
             </li>
             <li class="nav-item {% if 'index' in segment %} active {% endif %}">
-              <a class="nav-link" href="/app/customers.html">
+              <a class="nav-link" href="{% url 'customers' %}">
                 <i class="menu-icon typcn typcn-document-text"></i>
                 <span class="menu-title">Customers</span>
+              </a>
+            </li>
+            <li class="nav-item {% if 'index' in segment %} active {% endif %}">
+              <a class="nav-link" href="{% url 'products' %}">
+                <i class="menu-icon typcn typcn-document-text"></i>
+                <span class="menu-title">Products</span>
+              </a>
+            </li>
+            <li class="nav-item {% if 'index' in segment %} active {% endif %}">
+              <a class="nav-link" href="{% url 'machines' %}">
+                <i class="menu-icon typcn typcn-document-text"></i>
+                <span class="menu-title">Machines</span>
+              </a>
+            </li>
+            <li class="nav-item {% if 'index' in segment %} active {% endif %}">
+              <a class="nav-link" href="daily-inspections.html">
+                <i class="menu-icon typcn typcn-document-text"></i>
+                <span class="menu-title">Daily Inspection Data</span>
               </a>
             </li>
             <li class="nav-item">
