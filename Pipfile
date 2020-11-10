@@ -19,6 +19,9 @@ Unipath = "*"
 python-dotenv = "*"
 psycopg2 = "*"
 django = "*"
+pytest-django = "*"
+selenium = "*"
+mixer = "*"
 
 [requires]
 python_version = "3.8"
