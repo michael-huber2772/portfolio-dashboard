@@ -22,6 +22,7 @@ django = "*"
 pytest-django = "*"
 selenium = "*"
 mixer = "*"
+pytest-cov = "*"
 
 [requires]
 python_version = "3.8"

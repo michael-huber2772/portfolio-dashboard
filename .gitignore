@@ -93,3 +93,4 @@ venv.bak/
 .local/*
 
 data/
+NOTES.md

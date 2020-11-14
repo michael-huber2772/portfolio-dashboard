@@ -217,3 +217,5 @@ Visit `http://localhost:8001` in your browser. The app should be up & running.
 
 ---
 [Django Dashboard StarAdmin](https://appseed.us/admin-dashboards/django-dashboard-staradmin) - Provided by **AppSeed** [Web App Generator](https://appseed.us/app-generator).
+
+
