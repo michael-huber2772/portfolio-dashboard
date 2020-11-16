@@ -11,5 +11,7 @@ from .models import *
 
 admin.site.register(Customer)
 admin.site.register(Machine)
+admin.site.register(MTag)
+admin.site.register(RawMaterial)
 admin.site.register(Product)
 admin.site.register(ProductPrice)

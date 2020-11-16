@@ -19,12 +19,25 @@ class Machine(models.Model):
     weight = models.IntegerField()
     min_profit_per_hour = models.DecimalField(max_digits=10, decimal_places=5)
 
+class MTag(models.Model):
+    name = models.CharField(max_length=250, null=False)
+
+    def __str__(self):
+        return self.name
+
+class RawMaterial(models.Model):
+    name = models.CharField(max_length=250, null=False)
+    tag = models.ManyToManyField(MTag)
+
+    def __str__(self):
+        return self.name
 
 class Product(models.Model):
     product_code = models.CharField(max_length=250)
     product_description = models.TextField()
     customer = models.ManyToManyField(Customer)
     machine = models.ManyToManyField(Machine)
+    raw_material = models.ManyToManyField(RawMaterial)
 
     def __str__(self):
         return self.product_code
@@ -44,3 +57,6 @@ class ProductPrice(models.Model):
 
     def __str__(self):
         return f"{self.product} ({self.min_order_quantity}) {self.current_flag}"
+
+
+

@@ -88,6 +88,14 @@ def product_machine(request, pk):
     return render(request, 'products/product_machine.html', context)
 
 @login_required(login_url="/login/")
+def product_material(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    materials = RawMaterial.objects.filter(product=pk)
+
+    context = {'product': product, 'materials': materials}
+    return render(request, 'products/product_material.html', context)
+
+@login_required(login_url="/login/")
 def machines(request):
     machines = Machine.objects.all()
 
