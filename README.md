@@ -1,3 +1,48 @@
+# Manufacturing Dashboard
+![](diagrams/manufacturing.drawio.svg)
+
+
+## TABLE DESCRIPTIONS
+This section will contain descriptions about the tables and the columns
+contained within them.
+### MTAG
+<b>Description:</b>
+<p>
+This table is so that materials can be grouped into categories based on the tag
+they are given. It may be possible for them to have multiple tags but these
+tags are going to be used to give specify what the material is on the material
+page for a product. E.g. <b>Plastic:</b> ABS. Where "Plastic" is the tag and
+"ABS" is the material.
+</p>
+<table>
+    <thead>
+        <tr>
+            <th colspan="2" >MTAG</th>
+        </tr>
+        <tr>
+         <th>Column Name</th>
+         <th>Column Description</th>
+        </tr>
+    </thead>
+    <tbody>
+  <tr>
+    <td><b>name</b></td>
+    <td>This will be the tag name. e.g. "Plastic", "Chemical"</td>
+  </tr>
+  <tr>
+    <td>description</td>
+    <td>description to expound on what the tag is used for.</td>
+  </tr>
+</table>
+    </tbody>
+</table>
+
+# Notes/Ideas
+I am also going to be adding specific material tables, e.g. plastic, chemical
+and so on to my ER diagram. So I may be able to remove the MTAG table and just
+use the table that the object connects to.
+
+
 # [Django Star Admin](https://appseed.us/admin-dashboards/django-dashboard-staradmin)
 
 > **Open-Source Admin Dashboard** coded in **Django Framework** by **AppSeed** [Web App Generator](https://appseed.us/app-generator) - Features:
